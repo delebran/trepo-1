@@ -14,6 +14,6 @@ do
   echo "${f}" > ${f}
   git add ${f}
   git commit -m "Add ${f}"
-  git push origin --set-upstream origin ${f}
+  git push --set-upstream origin ${f}
   git checkout master
 done
