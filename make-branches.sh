@@ -3,7 +3,7 @@
 prefix=$1
 n=$2
 echo "making ${n} branches at different refs"
-max_f_num=$(ls ${prefix}* &> /dev/null | sort | tail -1 | sed 's/^f//')
+max_f_num=$(ls ${prefix}* 2> /dev/null | sort | tail -1 | sed 's/^f//')
 if [[ -z "${max_f_num}" ]]
 then
   max_f_num=0
