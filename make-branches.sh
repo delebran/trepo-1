@@ -1,15 +1,16 @@
 #!/bin/bash
 
-n=$1
+prefix=$1
+n=$2
 echo "making ${n} branches at different refs"
-max_f_num=$(ls f* &> /dev/null | sort | tail -1 | sed 's/^f//')
+max_f_num=$(ls ${prefix}* &> /dev/null | sort | tail -1 | sed 's/^f//')
 if [[ -z "${max_f_num}" ]]
 then
   max_f_num=0
 fi
 for ((i=0; i < n; ++i))
 do
-  f="f$((max_f_num + i))"
+  f="${prefix}$((max_f_num + i))"
   git checkout -b ${f}
   echo "${f}" > ${f}
   git add ${f}
