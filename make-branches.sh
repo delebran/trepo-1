@@ -7,7 +7,7 @@ if [[ -z "${max_f_num}" ]]
 then
   max_f_num=0
 fi
-for i in {1..${n}}
+for ((i=0; i < n; ++i))
 do
   f="f$((max_f_num + i))"
   git checkout -b ${f}
